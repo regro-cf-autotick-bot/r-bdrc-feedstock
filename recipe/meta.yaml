@@ -1,4 +1,4 @@
-{% set version = '1.1.0' %}
+{% set version = "2.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/bdrc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/bdrc/bdrc_{{ version }}.tar.gz
-  sha256: 2cfb02988afa0a9b9e1cd73c610e81800a5891d56e21deda7479338409a87876
+  sha256: 5e2297637ef2c2944c9d683cf38959a7b224f8fb804fb5b180955c3f75425dd2
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -48,9 +48,7 @@ about:
   home: https://sor16.github.io/bdrc/
   dev_url: https://github.com/sor16/bdrc
   license: MIT
-  summary: Fits a discharge rating curve based on the power-law and the generalized power-law
-    from data on paired stage and discharge measurements in a given river using a Bayesian
-    hierarchical model as described in Hrafnkelsson et al. (2020) <arXiv:2010.04769>.
+  summary: Fits a discharge rating curve based on the power-law and the generalized power-law from data on paired stage and discharge measurements in a given river using a Bayesian hierarchical model as described in Hrafnkelsson et al. (2020) <arXiv:2010.04769>.
   license_family: MIT
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
