@@ -35,7 +35,12 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - llvm-openmp                  # [osx]
   host:
+    - libblas
+    - liblapack
+    - libgomp                      # [linux or win]
+    - llvm-openmp                  # [osx]
     - r-base
     - r-rcpp >=0.11.0
     - r-rcpparmadillo >=0.2.35
@@ -44,6 +49,8 @@ requirements:
     - r-rlang
     - r-scales
   run:
+    - libgomp                      # [win]
+    - llvm-openmp                  # [osx]
     - r-base
     - r-rcpp >=0.11.0
     - r-rcpparmadillo >=0.2.35
